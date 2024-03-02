@@ -6,3 +6,6 @@ __pycache__/
 
 # open-meteo sqlite cache
 .cache.sqlite
+
+# macOS
+.DS_Store

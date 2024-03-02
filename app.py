@@ -46,6 +46,8 @@ sidebar = ui.sidebar(
         label="Dates",
         start="2022-01-01",
         end="2024-01-01",
+        min="2020-01-01",
+        max="2024-01-01",
     ),
     ui.input_numeric(
         "forecast_years",
@@ -313,7 +315,6 @@ def server(input: Inputs, output: Outputs, session: Session):
     @render.data_frame
     def table_forecast():
         _, df = forecast()
-        print(df)
         min_temp = input.temp_range()[0]
         max_temp = input.temp_range()[1] + 1
         data = []
